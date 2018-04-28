@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/longjialin/CLionProjects/ThreadPool/MThread.cpp
+cstring
+-
+MThread.h
+/Users/longjialin/CLionProjects/ThreadPool/MThread.h
+
+/Users/longjialin/CLionProjects/ThreadPool/MThread.h
+semaphore.h
+-
+
+/Users/longjialin/CLionProjects/ThreadPool/main.cpp
+iostream
+-
+cstring
+-
+
