@@ -8,86 +8,105 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug"/>
+				<Option working_dir="/Users/long/program/ThreadPool/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug"/>
+				<Option working_dir="/Users/long/program/ThreadPool/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug"/>
+				<Option working_dir="/Users/long/program/ThreadPool/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ThreadPool">
-				<Option output="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/ThreadPool" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug"/>
+				<Option output="/Users/long/program/ThreadPool/cmake-build-debug/ThreadPool" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/long/program/ThreadPool/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ThreadPool"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ThreadPool"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ThreadPool/fast">
-				<Option output="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/ThreadPool" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug"/>
+				<Option output="/Users/long/program/ThreadPool/cmake-build-debug/ThreadPool" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/long/program/ThreadPool/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ThreadPool/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/longjialin/CLionProjects/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 ThreadPool/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/long/program/ThreadPool/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/longjialin/CLionProjects/ThreadPool/MThread.cpp">
+		<Unit filename="/Users/long/program/ThreadPool/MThread.cpp">
 			<Option target="ThreadPool"/>
 		</Unit>
-		<Unit filename="/Users/longjialin/CLionProjects/ThreadPool/MThread.h">
+		<Unit filename="/Users/long/program/ThreadPool/MThread.h">
 			<Option target="ThreadPool"/>
 		</Unit>
-		<Unit filename="/Users/longjialin/CLionProjects/ThreadPool/main.cpp">
+		<Unit filename="/Users/long/program/ThreadPool/MThreadJob.cpp">
 			<Option target="ThreadPool"/>
 		</Unit>
-		<Unit filename="/Users/longjialin/CLionProjects/ThreadPool/CMakeLists.txt">
+		<Unit filename="/Users/long/program/ThreadPool/MThreadJob.h">
+			<Option target="ThreadPool"/>
+		</Unit>
+		<Unit filename="/Users/long/program/ThreadPool/MThreadMutex.cpp">
+			<Option target="ThreadPool"/>
+		</Unit>
+		<Unit filename="/Users/long/program/ThreadPool/MThreadMutex.h">
+			<Option target="ThreadPool"/>
+		</Unit>
+		<Unit filename="/Users/long/program/ThreadPool/MThreadPool.h">
+			<Option target="ThreadPool"/>
+		</Unit>
+		<Unit filename="/Users/long/program/ThreadPool/main.cpp">
+			<Option target="ThreadPool"/>
+		</Unit>
+		<Unit filename="/Users/long/program/ThreadPool/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
