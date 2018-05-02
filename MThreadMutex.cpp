@@ -29,3 +29,7 @@ bool MThreadMutex::trylock_mux() {
     }
     return false;
 }
+pthread_mutex_t *MThreadMutex::get_mux()
+{
+    return &mux;
+}

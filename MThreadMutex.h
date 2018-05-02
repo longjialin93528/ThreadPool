@@ -16,5 +16,6 @@ public:
     bool lock_mux();
     bool unlock_mux();
     bool trylock_mux();
+    pthread_mutex_t *get_mux();
 };
 #endif //THREADPOOL_MTHREADMUTEX_H
