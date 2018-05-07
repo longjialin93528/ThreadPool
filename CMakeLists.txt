@@ -3,4 +3,4 @@ project(ThreadPool)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ThreadPool main.cpp MThread.h MThread.cpp MThreadPool.h MThreadMutex.h MThreadMutex.cpp MThreadJob.h MThreadJob.cpp)
+add_executable(ThreadPool main.cpp MThread.h MThread.cpp MThreadPool.h MThreadMutex.h MThreadMutex.cpp MThreadJob.h MThreadJob.cpp MWorkThread.h MWorkThread.cpp MThreadCond.h MThreadCond.cpp MThreadPool.cpp)

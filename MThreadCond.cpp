@@ -2,7 +2,9 @@
 // Created by 龙佳琳 on 2018/5/2.
 //
 #include "MThreadCond.h"
-#include <assert.h>
+MThreadCond::MThreadCond() {
+    pthread_cond_init(&cond, nullptr);
+}
 MThreadCond::MThreadCond(MThreadMutex mutex):mux(mutex) {
     pthread_cond_init(&cond, nullptr);
 }

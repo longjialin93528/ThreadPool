@@ -10,9 +10,10 @@ class MThreadCond
 {
 private:
     pthread_cond_t cond;
-    MThreadMutex mux;
+    MThreadMutex  mux;
 public:
     MThreadCond(MThreadMutex mutex);
+    MThreadCond();
     ~MThreadCond();
     void cond_wait();
     void cond_signal();

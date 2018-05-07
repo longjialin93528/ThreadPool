@@ -7,31 +7,25 @@
 
 #include "MThread.h"
 #include "MThreadJob.h"
-#include "MThreadPool.h"
 #include "MThreadMutex.h"
+#include "MThreadCond.h"
 class MWorkThread:public MThread
 {
 private:
-    MThreadPool * ptr_MThreadPool;
     MThreadJob * ptr_MThreadJob;
     void * MThreadJobData;
-    MThreadMutex mux;
+    MThreadMutex pri_mux;
+    bool end_thread;
+public:
+    MThreadMutex work_mux;
+    MThreadCond cond;
 public:
     MWorkThread();
-    virtual ~MWorkThread();
+    ~MWorkThread();
     void MThreadRun();
     void AddJob(MThreadJob * pjob,void * jobdata);
-    MThreadJob * GetJob(){
-        return ptr_MThreadJob;
-    }
-    void SetThreadPool(MThreadPool * ptr_pool)
-    {
-        ptr_MThreadPool=ptr_pool;
-    }
-    MThreadPool * GetMThreadPool()
-    {
-        return ptr_MThreadPool;
-    }
-    void MThrendOver();
+    MThreadJob * GetJob();
+
+
 };
 #endif //THREADPOOL_MWORKTHREAD_H

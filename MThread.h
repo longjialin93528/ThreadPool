@@ -5,6 +5,8 @@
 #ifndef THREADPOOL_MTHREAD_H
 #define THREADPOOL_MTHREAD_H
 
+#include <_types.h>
+#include <pthread.h>
 #include <semaphore.h>
 enum MThreadState
 {
@@ -20,6 +22,9 @@ private:
     MThreadState MTState;
     int MTErrCode;
     bool is_THreadExit;
+    pthread_t tid;
+protected:
+    static void* ThreadFunction(void *);
 public:
     MThread();
     virtual ~MThread();
@@ -33,6 +38,9 @@ public:
     bool get_isThreadExit();
     void set_MTErrCode(int errcode);
     int get_MTErrCode();
+
+    void start();
+    void join();
     virtual void MThreadRun()=0;
 
 };

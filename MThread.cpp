@@ -1,6 +1,7 @@
 //
 // Created by 龙佳琳 on 2018/4/25.
 //
+#include <iostream>
 #include <cstring>
 #include "MThread.h"
 MThread::MThread() {
@@ -10,6 +11,7 @@ MThread::MThread() {
     MThreadName[4]='\0';
     MTState=THREAD_IDLE;
     is_THreadExit= false;
+    tid=0;
 }
 MThread::~MThread() {
     delete MThreadName;
@@ -46,4 +48,19 @@ void MThread::set_MTErrCode(int errcode) {
 }
 int MThread::get_MTErrCode() {
     return MTErrCode;
+}
+static void * MThread::ThreadFunction(void *data) {
+    MThread * thread_ptr= static_cast<MThread*>(data);
+    thread_ptr->MThreadRun();
+    return static_cast<void *>(0);
+}
+void MThread::start() {
+    int res=pthread_create(&tid, nullptr,ThreadFunction, this);
+    if(res!=0)
+    {
+        std::cout<<"线程创建失败"<<std::endl;
+    }
+}
+void MThread::join() {
+    pthread_join(tid, nullptr);
 }
