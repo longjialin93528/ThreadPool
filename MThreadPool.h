@@ -5,6 +5,7 @@
 #ifndef THREADPOOL_MTHREADPOOL_H
 #define THREADPOOL_MTHREADPOOL_H
 
+#include <iostream>
 #include <vector>
 #include "MThreadMutex.h"
 #include "MThreadCond.h"
@@ -31,11 +32,13 @@ public:
     /*互斥量*/
     MThreadMutex idleMutex;
     MThreadMutex busyMutex;
-    MThreadMutex mux;
+    MThreadMutex allMutex;
+    MThreadMutex currIdlenum_thread_mux;
     /*条件变量*/
     MThreadCond idleCond;
     MThreadCond busyCond;
     MThreadCond cond;
+    MThreadCond maxnum_threadCond;
     /*线程队列*/
     std::vector<MWorkThread *> allList;
     std::vector<MWorkThread *> idleList;
