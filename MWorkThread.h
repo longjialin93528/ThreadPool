@@ -9,13 +9,14 @@
 #include "MThreadJob.h"
 #include "MThreadMutex.h"
 #include "MThreadCond.h"
+class MThreadPool;
 class MWorkThread:public MThread
 {
 private:
     MThreadJob * ptr_MThreadJob;
     void * MThreadJobData;
+    MThreadPool * threadPool_ptr;
     MThreadMutex pri_mux;
-    bool end_thread;
 public:
     MThreadMutex work_mux;
     MThreadCond cond;
@@ -25,7 +26,13 @@ public:
     void MThreadRun();
     void AddJob(MThreadJob * pjob,void * jobdata);
     MThreadJob * GetJob();
-
-
+    void set_threadPool(MThreadPool * pool_ptr)
+    {
+        threadPool_ptr=pool_ptr;
+    }
+    MThreadPool * get_threadPool()
+    {
+        return threadPool_ptr;
+    }
 };
 #endif //THREADPOOL_MWORKTHREAD_H

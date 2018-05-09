@@ -49,7 +49,7 @@ void MThread::set_MTErrCode(int errcode) {
 int MThread::get_MTErrCode() {
     return MTErrCode;
 }
-static void * MThread::ThreadFunction(void *data) {
+void * MThread::ThreadFunction(void *data) {
     MThread * thread_ptr= static_cast<MThread*>(data);
     thread_ptr->MThreadRun();
     return static_cast<void *>(0);
