@@ -7,11 +7,21 @@
 MWorkThread::MWorkThread() {
     ptr_MThreadJob= nullptr;
     MThreadJobData= nullptr;
+    threadPool_ptr= nullptr;
+    workThread_exit_message=(void*)(0);
 }
 MWorkThread::~MWorkThread() {
     if(ptr_MThreadJob!= nullptr)
     {
         delete ptr_MThreadJob;
+    }
+    if(threadPool_ptr!= nullptr)
+    {
+        delete threadPool_ptr;
+    }
+    if(MThreadJobData!= nullptr)
+    {
+        delete MThreadJobData;
     }
 }
 MThreadJob* MWorkThread::GetJob() {
@@ -25,7 +35,15 @@ void MWorkThread::AddJob(MThreadJob *pjob, void *jobdata) {
     pri_mux.unlock_mux();
     cond.cond_signal();
 }
-
+void MWorkThread::destoryThread() {
+    work_mux.lock_mux();//线程运行时会占用此锁，所以用此锁可以避免打断线程运行
+    set_isThreadExit(true);
+    ptr_MThreadJob= nullptr;
+    MThreadJobData= nullptr;
+    cond.cond_signal();//给run中阻塞的cond发信号
+    work_mux.unlock_mux();
+    pthread_exit(workThread_exit_message);
+}
 void MWorkThread::MThreadRun() {
     set_MThreadstate(THREAD_RUN);
     while(1)
@@ -40,7 +58,10 @@ void MWorkThread::MThreadRun() {
             {
                 break;
             }
-
+            else
+            {
+                continue;
+            }
         }
         /*得到任务进行工作*/
         work_mux.lock_mux();//开始工作后不能中断

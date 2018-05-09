@@ -16,6 +16,7 @@ MThreadPool::MThreadPool() {
         workThread_ptr->start();
     }
 }
+/*此处应是一个全参数的构造函数，有时间再改*/
 MThreadPool::MThreadPool(unsigned int initNum) {
     assert(initNum>0&&initNum<=30);
     initnum_thread=initNum;
@@ -24,6 +25,7 @@ MThreadPool::MThreadPool(unsigned int initNum) {
     for(int i=0;i<initnum_thread;i++)
     {
         MWorkThread * workThread_ptr=new MWorkThread();
+        workThread_ptr->set_threadPool(this);
         addToIdleList(workThread_ptr);
         workThread_ptr->start();
     }
@@ -35,6 +37,7 @@ void MThreadPool::createIdleThread(int num) {
     for(int i=0;i<num;i++)
     {
         MWorkThread * newThread_ptr=new MWorkThread();
+        newThread_ptr->set_threadPool(this);
         addToAllList(newThread_ptr);
         currIdlenum_thread_mux.lock_mux();
         currIdlenum_thread++;
@@ -125,7 +128,7 @@ void MThreadPool::destoryThreadPool() {
     for(int i=0;i<allList.size();i++)
     {
         MWorkThread * temp_ptr=allList[i];
-        temp_ptr->join();
+        temp_ptr->destoryThread();
     }
 }
 MWorkThread* MThreadPool::getIdleThread() {

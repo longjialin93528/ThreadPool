@@ -22,12 +22,14 @@ private:
     MThreadState MTState;
     int MTErrCode;
     bool is_THreadExit;
-    pthread_t tid;
+    void * thread_exit_message;
+    void * join_message;
+    pthread_t tid;//unsigned long int,若是printf输出需要 %lu 格式
 protected:
     static void* ThreadFunction(void *);
 public:
     MThread();
-    virtual ~MThread();
+    virtual ~MThread();//定义为虚函数，确保以正确的顺序析构
     void set_MThreadid(unsigned long ID);
     unsigned long get_MThreadid();
     void set_MThreadname(char *name);
@@ -39,8 +41,10 @@ public:
     void set_MTErrCode(int errcode);
     int get_MTErrCode();
 
+    pthread_t get_pthread_t();
+
     void start();
-    void join();
+    void join(pthread_t tid_wait);
     virtual void MThreadRun()=0;
 
 };

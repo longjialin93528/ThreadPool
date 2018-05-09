@@ -17,12 +17,14 @@ private:
     void * MThreadJobData;
     MThreadPool * threadPool_ptr;
     MThreadMutex pri_mux;
+    void * workThread_exit_message;
 public:
     MThreadMutex work_mux;
-    MThreadCond cond;
+    MThreadCond cond;//用来同步是否得到任务（任务即是生产者消费者中的消耗品），具体在run中消耗，在addjob中产生
 public:
     MWorkThread();
     ~MWorkThread();
+    void destoryThread();
     void MThreadRun();
     void AddJob(MThreadJob * pjob,void * jobdata);
     MThreadJob * GetJob();
