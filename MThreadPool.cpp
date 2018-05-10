@@ -16,12 +16,13 @@ MThreadPool::MThreadPool() {
         workThread_ptr->start();
     }
 }
-/*此处应是一个全参数的构造函数，有时间再改*/
-MThreadPool::MThreadPool(unsigned int initNum) {
-    assert(initNum>0&&initNum<=30);
+/*全参数的线程池构造函数，方便线程池管理类构建自己想要大小的线程池*/
+MThreadPool::MThreadPool(unsigned int max, unsigned int minIdle, unsigned int maxIdle, unsigned int initNum ) {
+    assert(initNum>0&&minIdle<maxIdle&&minIdle<max&&maxIdle<max&&initNum<max);
     initnum_thread=initNum;
-    minavli_thread=(initNum-10>0)?initNum-10:5;
-    maxavli_thread=(initNum+10)?initNum+10:20;
+    maxnum_thread=max;
+    minavli_thread=minIdle;
+    maxavli_thread=maxIdle;
     for(int i=0;i<initnum_thread;i++)
     {
         MWorkThread * workThread_ptr=new MWorkThread();
