@@ -11,10 +11,13 @@ MThread::MThread() {
     MThreadName[4]='\0';
     MTState=THREAD_IDLE;
     is_THreadExit= false;
+    thread_exit_message=(void *)(0);
+    join_message=(void*)(0);
     tid=0;
 }
 MThread::~MThread() {
     delete MThreadName;
+    pthread_exit(thread_exit_message);
 }
 void MThread::set_MThreadid(unsigned long ID) {
     MThreadID=ID;
@@ -49,7 +52,7 @@ void MThread::set_MTErrCode(int errcode) {
 int MThread::get_MTErrCode() {
     return MTErrCode;
 }
-static void * MThread::ThreadFunction(void *data) {
+void * MThread::ThreadFunction(void *data) {
     MThread * thread_ptr= static_cast<MThread*>(data);
     thread_ptr->MThreadRun();
     return static_cast<void *>(0);
@@ -61,6 +64,9 @@ void MThread::start() {
         std::cout<<"线程创建失败"<<std::endl;
     }
 }
-void MThread::join() {
-    pthread_join(tid, nullptr);
+pthread_t MThread::get_pthread_t() {
+    return tid;
+}
+void MThread::join(pthread_t tid_wait) {
+    pthread_join(tid_wait,&join_message);
 }

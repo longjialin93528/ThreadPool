@@ -45,24 +45,26 @@ public:
     std::vector<MWorkThread *> busyList;
 public:
     MThreadPool();
-    MThreadPool(unsigned int initNum);
+    MThreadPool::MThreadPool(unsigned int max, unsigned int minIdle, unsigned int maxIdle, unsigned int initNum )
     virtual ~MThreadPool();
 
-    void set_maxNum(int num){maxnum_thread=num;}
-    int get_maxNum(){return maxnum_thread;}
+    void set_maxNum(unsigned int num){maxnum_thread=num;}
+    unsigned int get_maxNum(){return maxnum_thread;}
 
-    void set_minavliNum(int num){minavli_thread=num;}
-    int get_minavliNum(){return minavli_thread;}
+    void set_minavliNum(unsigned int num){minavli_thread=num;}
+    unsigned int get_minavliNum(){return minavli_thread;}
 
-    void set_maxavliNum(int num){maxavli_thread=num;}
-    int get_maxavliNum(){return maxavli_thread;}
+    void set_maxavliNum(unsigned int num){maxavli_thread=num;}
+    unsigned int get_maxavliNum(){return maxavli_thread;}
 
-    void set_initNum(int num){initnum_thread=num;}
-    int get_initNum(){return initnum_thread;}
+    void set_initNum(unsigned int num){initnum_thread=num;}
+    unsigned int get_initNum(){return initnum_thread;}
 
     int get_currIdleNum(){return currIdlenum_thread;}
-    int get_allNum(){return allList.size();}
-    int get_busyNum(){return busyList.size();}
+
+    unsigned long get_allNum(){return allList.size();}
+
+    unsigned long get_busyNum(){return busyList.size();}
 
     void destoryThreadPool();
     void run(MThreadJob* job,void * jobdata);
